@@ -37,6 +37,6 @@ Entra a
 ```http
 http://127.0.0.1:1802/docs
 ```
-Y selecciona una imagen en el método POST.
+Y carga una imagen en el método POST.
 
 
