@@ -5,8 +5,6 @@ Para correr este proyecto.
 1. 
 ```bash
 git clone https://github.com/dmolinat/FastAPIHealthyRoad.git
-
-ip install -r requirements.txt  # Instala las dependencias
 ```
 
 2.
