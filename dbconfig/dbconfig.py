@@ -29,7 +29,8 @@ class MySqLConnectionCreator:
                 port=port_value,
                 user=user_value,
                 password=password_value,
-                database=databse_value
+                database=databse_value, 
+                auth_plugin='mysql_native_password'
             )
 
             if connection.is_connected():

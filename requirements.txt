@@ -50,4 +50,4 @@ ultralytics==8.2.94
 ultralytics-thop==2.0.6
 urllib3==2.2.3
 uvicorn==0.30.6
-mysql-connector
+mysql-connector-python

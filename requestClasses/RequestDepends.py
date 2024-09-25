@@ -5,3 +5,4 @@ class DataRoad(BaseModel):
     latitud: str
     longitud: str
     road_id: int
+    road_name: str

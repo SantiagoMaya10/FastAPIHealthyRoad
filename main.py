@@ -4,6 +4,7 @@ from io import BytesIO
 from model.yolov8 import get_external_img_v8
 from ultralytics import YOLO
 from requestClasses.RequestDepends import DataRoad
+from usecases.saveclassification import save_classification_to_db
 
 # Para obtener swager, se usa localhost:XXXX/docs
 app = FastAPI()   
@@ -39,5 +40,8 @@ async def clasify_damage_type_then_save_to_database(file: UploadFile = File(...)
         "bboxes": L_bboxes,
         "danios": L_danios
     }
+    
+    save_classification_to_db(request.road_id, request.road_name, request.latitud, request.longitud, L_danios)
+    
     
     return response
