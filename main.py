@@ -24,14 +24,9 @@ modelv8st = YOLO('model/best.pt')
 app.title = "Healhty Road API"
 app.version = "9.11"
 
-# tags: Grupo de rutas, util para agrupar distintos end points.
-@app.get('/', tags=['Home'])     
-def home():
-    return "Healhty Road API"
 
-
-@app.post("/upload/", tags=['Load Image and return model predict'])
-async def predict(file: UploadFile = File(...), 
+@app.post("/upload", tags=['Load image and return model prediction'])
+async def predict_damage_type(file: UploadFile = File(...), 
                   request: DataRoad = Depends()
                   ):
     # Leer el archivo de imagen
