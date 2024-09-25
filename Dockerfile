@@ -7,7 +7,9 @@ WORKDIR /app
 # Copy the requirements.txt file into the container
 COPY requirements.txt .
 
-RUN apt-get update && apt-get install libgl1
+# Install system dependencies required by some libraries (e.g. OpenCV)
+RUN apt-get update && apt-get install -y libgl1 && \
+    rm -rf /var/lib/apt/lists/*  # Clean up the APT cache to reduce image size
 
 # Install the necessary packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
