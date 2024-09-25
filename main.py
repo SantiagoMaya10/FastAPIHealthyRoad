@@ -55,7 +55,8 @@ async def predict(file: UploadFile = File(...),
     # Guardar imagen en la raiz de donde fue pedido.
     file_name=get_name_file(file.filename)
 
-    processed_image.save(f"saveImgPredict/{file_name}_{tramo_ini+tramo_final}_{fecha_formateada}.jpg")
+    ## Commented line because if image is saved the cloud service runs put of memory                    
+    ## processed_image.save(f"saveImgPredict/{file_name}_{tramo_ini+tramo_final}_{fecha_formateada}.jpg")
 
     # Puedes retornar las cajas delimitadoras y daños, y también guardar la imagen procesada si es necesario
     response = {
