@@ -7,10 +7,10 @@ WORKDIR /app
 # Copy the requirements.txt file into the container
 COPY requirements.txt .
 
+RUN apt-get update && apt-get install libgl1
+
 # Install the necessary packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
-
-RUN apt-get update && apt-get install libgl1
 
 # Copy the rest of your application code into the container
 COPY . .
