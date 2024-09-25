@@ -12,35 +12,6 @@ def isInteger(str):
     except:
         return False
 
-# Funcion para obtener tramo inicial y final
-def get_tramo_ini_fin(lat, lon):
-    # Realizar un split por espacios en blanco a la cadena
-    split_lat = lat.split(" ")
-    split_lon = lon.split(" ")
-
-    # Obtener los numeros, se obtendra la coordenada como el primer elemento
-    list_lat_number = list(filter(
-        lambda x: isInteger(x), split_lat
-    ))
-    list_lon_number = list(filter(
-        lambda x: isInteger(x), split_lon
-    ))
-
-    # Si alguna lista esta vacia
-    if(len(list_lat_number)==0 or len(list_lon_number)==0):
-        return ("0","0")
-    else:   
-        # Obtener el primer elemento de cada lista
-        f_lat=list_lat_number[0]
-        f_lon=list_lon_number[0]
-
-        # Regresarlos como una tupla de strings
-        return (str(f_lat),str(f_lon))
-
-# Funcion para obtener nombre del archivo dado un path
-def get_name_file(path):
-    l=path.split("/")
-    return l[len(l)-1].split(".")[0]
 
 def get_pred_with_output_v8(model, dataset, index, use_dataset=True, L=[]):
     # Cargar la imagen
