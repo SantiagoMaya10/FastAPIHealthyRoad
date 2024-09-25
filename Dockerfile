@@ -8,7 +8,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install system dependencies required by some libraries (e.g. OpenCV)
-RUN apt-get update && apt-get install -y libgl1 && \
+RUN apt-get update && apt-get install -y libgl1 libglib2.0-0 && \
     rm -rf /var/lib/apt/lists/*  # Clean up the APT cache to reduce image size
 
 # Install the necessary packages specified in requirements.txt
